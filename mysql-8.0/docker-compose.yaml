@@ -1,0 +1,19 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:8.0
+#    image: mysql:8.0.36
+    privileged: true
+    restart: always
+    container_name: mysql-_UUID_
+    ports:
+      - "_PORT_:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: _PASSWORD_
+#      MYSQL_DATABASE: your_database
+#      MYSQL_USER: your_user
+#      MYSQL_PASSWORD: your_password
+
+    volumes:
+      - /data/mysql/_UUID_/db:/var/lib/mysql
+      - /data/mysql/_UUID_/my.cnf:/etc/my.cnf

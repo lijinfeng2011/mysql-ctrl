@@ -1,0 +1,13 @@
+version: '3.1'
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: mysql-_UUID_
+    ports:
+      - "_PORT_:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: _PASSWORD_
+    volumes:
+      - /data/mysql/_UUID_/db:/var/lib/mysql
+      - /data/mysql/_UUID_/my.cnf:/etc/my.cnf
